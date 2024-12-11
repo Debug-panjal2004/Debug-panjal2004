@@ -1,0 +1,16 @@
+def max_product(nums):
+    if len(nums) < 2:
+        return None  # Cannot find a product with fewer than 2 numbers
+
+    # Sort the list first
+    nums.sort()
+
+    # The maximum product can either be:
+    # 1) The product of the two largest positive numbers (last two in the sorted list)
+    # 2) The product of the two smallest negative numbers (first two in the sorted list)
+    
+    return max(nums[0] * nums[1], nums[-1] * nums[-2])
+
+# Example usage:
+nums = [1, 10, -5, 1, -100]
+print("Maximum product:", max_product(nums))
